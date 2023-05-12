@@ -1,0 +1,31 @@
+<div class="mainContainer mt-5">
+    <div class="container">
+      <mat-form-field>
+        <mat-label>Select Category</mat-label>
+        <mat-select [(ngModel)]="selectedCategory" (selectionChange)="onCategoryChange()">
+          <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="button-container">
+        <button class="btn btn-light" [disabled]="isDisabled" (click)="onViewButtonClick()">View</button>
+        <button class="btn btn-primary" [disabled]="isDisabled" (click)="onAddButtonClick()">Add</button>
+      </div>
+    </div>
+  
+    <div class="questionsBox">
+      <ng-container *ngIf="showAddContent">
+        <p style="font-size: 20px;" class="mt-3">Add Question Here</p>
+        <div style="width: 60%;">
+            <ckeditor [editor]="Editor" class="ckeditor-container"></ckeditor>
+        </div>
+        
+    </ng-container>
+      <ng-container *ngIf="showViewContent">
+        <p style="text-align: center;font-size: 20px;" class="mt-5">View Here</p>
+      </ng-container>
+      <ng-container *ngIf="!showAddContent && !showViewContent">
+        <p style="text-align: center;font-size: 20px;" class="mt-5">No Questions are Available!</p>
+      </ng-container>
+    </div>
+  </div>
+  

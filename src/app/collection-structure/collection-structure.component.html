@@ -1,0 +1,98 @@
+
+<div class="course-management-container mt-5">
+    <div class="column courses-column">
+      <div class="header">
+        <label>
+          <input type="checkbox" [checked]="areAllCoursesSelected()" (change)="toggleAllCourseSelection($event)">
+          Courses
+        </label>
+      </div>
+      <div class="course-list">
+        <label *ngFor="let course of courses">
+          <input type="checkbox" [checked]="selectedCourses.includes(course.name)" (change)="toggleCourseSelection(course)">
+          {{ course.name }}
+        </label>
+      </div>
+    </div>
+    <div class="column subjects-column">
+      <div class="header">
+        <label>
+          <input type="checkbox" [checked]="areAllSubjectsSelected()" (change)="toggleAllSubjectSelection()">
+          Subjects
+        </label>
+      </div>
+      <div class="subject-list">
+        <div *ngFor="let course of courses">
+          <ng-container *ngIf="selectedCourses.includes(course.name)">
+            <div class="subject-row" *ngFor="let subject of course.subjects">
+              <label>
+                <input type="checkbox" [(ngModel)]="selectedSubjects[subject.name]" (change)="toggleSubjectSelection(subject)">
+                {{ subject.name }}
+              </label>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="column topics-column">
+        <div class="header">
+            <label>
+              <input type="checkbox" [checked]="areAllTopicsSelected()" (change)="toggleAllTopicSelection()">
+              Topics
+            </label>
+          </div>
+            <div class="topic-list">
+          <ng-container *ngFor="let course of courses">
+            <ng-container *ngIf="selectedCourses.includes(course.name)">
+              <ng-container *ngFor="let subject of course.subjects">
+                <ng-container *ngIf="selectedSubjects[subject.name]">
+                  <div *ngFor="let topic of subject.topics" class="topic-row">
+                    <label>
+                      <input
+                        type="checkbox"
+                        [checked]="selectedTopics[topic.name]"
+                        (change)="toggleTopicSelection(topic)"
+                      />
+                      {{ topic.name }}
+                    </label>
+                  </div>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
+      <div class="column subtopics-column">
+        <div class="header">
+            <label>
+              <input type="checkbox" [checked]="areAllSubtopicsSelected()" (change)="toggleAllSubtopicSelection()">
+              Subtopics
+            </label>
+          </div>
+          
+          <div class="subtopic-list">
+            <ng-container *ngFor="let course of courses">
+              <ng-container *ngIf="selectedCourses.includes(course.name)">
+                <ng-container *ngFor="let subject of course.subjects">
+                  <ng-container *ngIf="selectedSubjects[subject.name]">
+                    <ng-container *ngFor="let topic of subject.topics">
+                      <ng-container *ngIf="selectedTopics[topic.name]">
+                        <div *ngFor="let subtopic of topic.subtopics" class="subtopic-row">
+                          <label>
+                            <input type="checkbox" [(ngModel)]="selectedSubtopics[subtopic]" (change)="toggleSubtopicSelection(topic, subtopic)">
+                            {{ subtopic }}
+                          </label>
+                        </div>
+                      </ng-container>
+                    </ng-container>
+                  </ng-container>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+          </div>
+          
+      </div>
+      
+      
+  </div>
+  

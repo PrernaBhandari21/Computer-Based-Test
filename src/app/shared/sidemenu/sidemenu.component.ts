@@ -35,13 +35,13 @@ export class SidemenuComponent implements OnInit {
       },
       
       {
-        label:"Upcoming Products",
-        link:"/upcomngProducts",
-        icon:"question_answer"
+        label:"Teacher Registration",
+        link:"/teacher-registration",
+        icon:"group"
       },
       {
-        label:"Coupons",
-        link:"/coupons",
+        label:"Question-Bank",
+        link:"/question-bank",
         icon:"redeem"
       },
       {

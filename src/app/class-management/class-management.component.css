@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .column {
+    flex: 1;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .mat-cell,
+  .mat-header-cell {
+    padding: 10px;
+  }
+  
+  button {
+    min-width: 80px;
+  }
+  

@@ -1,0 +1,40 @@
+.mainContainer{
+    border: 1px solid pink;
+    background-color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+   }
+
+button{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.questionsBox{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    height: 400px;
+    padding: 10px;
+}
+
+.ckeditor-container .ck-editor__editable {
+    height: 200px;
+}
+
+
+  
+  

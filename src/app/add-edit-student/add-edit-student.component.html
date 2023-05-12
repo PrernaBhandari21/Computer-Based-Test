@@ -1,0 +1,38 @@
+<h1>Add/Edit Student Details</h1>
+<form [formGroup]="editForm" (ngSubmit)="save()">
+  <mat-form-field appearance="outline">
+    <mat-label>Name of User</mat-label>
+    <input matInput formControlName="studentName" placeholder="Enter name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Phone No.</mat-label>
+    <input matInput formControlName="phoneNo" placeholder="Enter phone number" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="userId" placeholder="Enter email" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Group</mat-label>
+    <mat-select formControlName="group" placeholder="Select group type">
+      <mat-option *ngFor="let groupType of groupTypes" [value]="groupType">{{ groupType }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Sub Group</mat-label>
+    <mat-select formControlName="subGroup" placeholder="Select group type">
+      <mat-option *ngFor="let subgroupType of subGroupTypes" [value]="subgroupType">{{ subgroupType }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  
+
+  <div class="button-container">
+    <button class="btn btn-success me-3" type="submit" [disabled]="!editForm.valid">Save</button>
+    <button class="btn btn-light" type="button" (click)="cancel()">Cancel</button>
+  </div>
+</form>

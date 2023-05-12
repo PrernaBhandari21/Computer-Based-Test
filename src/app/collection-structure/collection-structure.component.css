@@ -1,0 +1,50 @@
+.course-management-container {
+    display: flex;
+    height: 500px;
+    border: 1px solid black;
+    background: white;
+    border-radius: 10px;
+  }
+  
+  .column {
+    flex: 1;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;  
+    scrollbar-width: thin; 
+  }
+  
+  .column:last-child {
+    border-right: none;
+  }
+  
+  .header {
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .course-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .course-list label {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 5px;
+  }
+  
+  .subject-list {
+    padding: 10px;
+  }
+  
+  .subject-row {
+    margin-bottom: 5px;
+  }
+  
+
+  
+  .topic-list {
+    padding-left: 10px;
+  }
+  

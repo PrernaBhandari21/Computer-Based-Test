@@ -1,14 +1,14 @@
 
-<ng-container >
 
+<ng-container >
   <mat-sidenav-container class="example-container"  >
     <mat-sidenav #sidenav mode="side" opened="true" class="example-sidenav" style="border-right: 2px solid;">
       <app-sidemenu></app-sidemenu>
     </mat-sidenav>
     
-    <mat-sidenav-content perfectScrollbar >
-      <app-header style="position: fixed;top: 0;left: 0;right: 0;z-index: 1;"></app-header>
-      <div style="padding-top: 80px; padding-bottom: 30px; padding-inline: 30px;">
+    <mat-sidenav-content perfectScrollbar style="padding-top: 25px;" >
+      <!-- <app-header style="position: fixed;top: 0;left: 0;right: 0;z-index: 1;"></app-header> -->
+      <div style="padding-inline: 30px;">
         <router-outlet></router-outlet>
       </div>
     </mat-sidenav-content>
