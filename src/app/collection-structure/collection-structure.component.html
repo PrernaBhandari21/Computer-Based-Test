@@ -26,10 +26,11 @@
           <ng-container *ngIf="selectedCourses.includes(course.name)">
             <div class="subject-row" *ngFor="let subject of course.subjects">
               <label>
-                <input type="checkbox" [(ngModel)]="selectedSubjects[subject.name]" (change)="toggleSubjectSelection(subject)">
+                <input type="checkbox" [checked]="selectedSubjects[subject.name]" (change)="toggleSubjectSelection(subject)">
                 {{ subject.name }}
               </label>
             </div>
+           
           </ng-container>
         </div>
       </div>
