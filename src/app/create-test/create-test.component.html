@@ -1,22 +1,172 @@
 <div id="container" class="container-background tab-content page-container">
 
     <div id="create-test-page" class="test-page tab-pane fade active in">
-
         <div id="sub-menu" class="menu-bar font-14">
-
-            <div class="sub-menu float-left Semibold">
-
+            <div class="sub-menu float-left Semibold">	
                 <span id="step1" class="float-left Semibold">1 : &nbsp;</span>
                 <a id="basic-info" class="text-color-imp float-left" data-toggle="tab" href="#test-basic-info" onclick="setActiveStep(this);" aria-expanded="true">Basic Details</a>
                 <span id="basic-info-check" class="fa fa-check-circle-o float-left font-14 step-check"></span>
-                <span class="fa fa-angle-right float-right font-14 caret-right"></span>
+                <mat-icon class="float-right font-14 caret-right">keyboard_arrow_right</mat-icon>
+            </div>
+            <div class="sub-menu float-left">
+                <span id="step2" class="float-left Semibold">2 : &nbsp;</span>
+                <a id="test-skeleton" class="float-left text-color-imp disable-pointer-event" data-toggle="tab" href="#test-skeleton-info" onclick="setActiveStep(this);" aria-expanded="true">Test Structure</a>
+                <span id="test-skeleton-check" class="fa fa-check-circle-o float-left font-14 step-check"></span>
+                <mat-icon class="float-right font-14 caret-right">keyboard_arrow_right</mat-icon>
+            </div>
+            <div class="sub-menu float-left">
+                <span id="step3" class="float-left Semibold">3 : &nbsp;</span>
+                <a id="add-question" class="float-left text-color-imp disable-pointer-event" data-toggle="tab" href="#test-addquestion-info" onclick="setActiveStep(this);" aria-expanded="true">Add Question</a>
+                <span id="add-question-check" class="fa fa-check-circle-o float-left font-14 step-check"></span>
+                <mat-icon class="float-right font-14 caret-right">keyboard_arrow_right</mat-icon>
+            </div>
+            <div class="sub-menu float-left">
+                <span id="step4" class="float-left Semibold">4 : &nbsp;</span>
+                <a id="test-preview" class="float-left text-color-imp disable-pointer-event" data-toggle="tab" href="#test-preview-info" onclick="setActiveStep(this);" aria-expanded="true">Test Preview</a>
+            </div>
+        </div>
+      
 
+        <div class="tab-content">
+            <div id="test-basic-info" class="tab-pane fade active in mt-5 mb-4">
+                <div class="font-14 test-row" >
+                    <mat-icon>play_arrow</mat-icon><div style="width: 15%;">Enter Test Name  :</div>
+                    <mat-form-field class="example-full-width ms-5" style="width: 65%;" appearance="outline">
+                        <input matInput [formControl]="testNameFormControl" placeholder="Test Name">
+                        <mat-error *ngIf="testNameFormControl.invalid">
+                          Test Name is required
+                        </mat-error>
+                      </mat-form-field>
+                      
+                 </div>
+            </div>
 
+            <div id="test-basic-info" class="tab-pane fade active in mt-5">
+                <div class="font-14 test-row">
+                  <mat-icon>play_arrow</mat-icon>
+                  <div style="width: 15%;">Choose Test Category :</div>
+                  <mat-form-field class="example-full-width ms-5" appearance="outline">
+                    <mat-label>Group</mat-label>
+                    <mat-select [formControl]="groupFormControl" placeholder="Select Group" [disableOptionCentering]="true">
+                      <mat-option *ngFor="let group of groups" [value]="group">
+                        {{ group }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width ms-5" appearance="outline">
+                    <mat-label>Subgroup</mat-label>
+                    <mat-select [formControl]="subgroupFormControl" placeholder="Select Subgroup" [disableOptionCentering]="true">
+                      <mat-option *ngFor="let subgroup of subgroups" [value]="subgroup">
+                        {{ subgroup }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              
+              <div id="test-basic-info" class="tab-pane fade active in mt-5">
+                <div class="font-14 test-row">
+                  <mat-icon>play_arrow</mat-icon>
+                  <div style="width: 15%;">Choose Test Type :</div>
+                  <mat-form-field class="example-full-width ms-5" appearance="outline">
+                    <mat-label>Test</mat-label>
+                    <mat-select [formControl]="groupFormControl" placeholder="Select Test" [disableOptionCentering]="true">
+                      <mat-option *ngFor="let test of testTypes" [value]="test">
+                        {{ test }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                 
+                </div>
+              </div>
 
+              <div id="test-basic-info" class="tab-pane fade active in mt-5">
+                <div class="font-14 test-row">
+                  <mat-icon>play_arrow</mat-icon>
+                  <div style="width: 15%;">Test Settings :</div>               
+                </div>
+
+                <form>
+                    <div class="checkboxRow">
+                      <div class="checkboxContainer">
+                        <mat-checkbox></mat-checkbox>
+                        <mat-label>Shuffle questions within section</mat-label>
+                      </div>
+                    
+                      <div class="checkboxContainer">
+                        <mat-checkbox></mat-checkbox>
+                        <mat-label>Full screen mode mandatory to attempt test</mat-label>
+                      </div>
+                    </div>
+
+                    <div class="checkboxRow">
+                        <div class="checkboxContainer">
+                          <mat-checkbox></mat-checkbox>
+                          <mat-label>Show on-screen Calculator</mat-label>
+                        </div>
+                      
+                        <div class="checkboxContainer">
+                          <mat-checkbox></mat-checkbox>
+                          <mat-label>Show score card to student after submitting test</mat-label>
+                        </div>
+                      </div>
+
+                      <div class="checkboxRow">
+                        <div class="checkboxContainer">
+                          <mat-checkbox></mat-checkbox>
+                          <mat-label>Shuffle question options</mat-label>
+                        </div>
+                      
+                        <div class="checkboxContainer">
+                          <mat-checkbox></mat-checkbox>
+                          <mat-label>Assign questions randomly from a pool to each student</mat-label>
+                        </div>
+                      </div>
+
+                      <div class="checkboxRow">
+                        <div class="checkboxContainer">
+                          <mat-checkbox></mat-checkbox>
+                          <mat-label>Perform section-wise time validation</mat-label>
+                        </div>
+                      
+                        <div class="checkboxContainer">
+                          <mat-checkbox></mat-checkbox>
+                          <mat-label>Perform case sensitive comparison for Text-answer questions</mat-label>
+                        </div>
+                      </div>
+
+                      <div class="checkboxRow">
+                        <div class="checkboxContainer">
+                          <mat-checkbox></mat-checkbox>
+                          <mat-label>Enable test proctoring</mat-label>
+                        </div>
+                      
+                        
+                      </div>
+                  </form>
+                  
+              </div>
+
+              <div id="test-basic-info" class="tab-pane fade active in mt-3 ">
+                <div class="font-14 test-row" >
+                    <div style="width: 25%;">Max. attempts allowed for test  :</div>
+                    <mat-form-field class="example-full-width ms-5" style="width: 25%;" appearance="outline">
+                        <input matInput type="number" [formControl]="testNameFormControl" placeholder="Enter here">
+                    </mat-form-field>
+                      
+                 </div>
             </div>
 
         </div>
 
 
+        <div style="text-align: right;">
+            <button type="button" class="btn btn-success m-2">Save</button>
+            <button type="button" class="btn btn-outline-primary m-2">Save And Continue</button>
+
+        </div>
+
     </div>
+
+
 </div>

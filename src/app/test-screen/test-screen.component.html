@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="question-section">
+      <div class="question-number">
+        Question {{ currentQuestionIndex + 1 }}/{{ totalQuestions }}
+      </div>
+      <div class="quesDisplay">
+        <div class="question">
+            {{ currentQuestion }}
+          </div>
+    
+          <div class="options">
+            <mat-radio-group [(ngModel)]="selectedOption">
+              <mat-radio-button *ngFor="let option of currentQuestionOptions; let i = index" [value]="i">
+                {{ option }}
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+      </div>
+
+    </div>
+  
+    <div class="question-list">
+        <div class="question-circle" *ngFor="let question of questionList; let i = index" [class.active]="i === currentQuestionIndex" (click)="navigateToQuestion(i)">
+          {{ i + 1 }}
+        </div>
+      </div>
+      
+      
+  </div>
+  

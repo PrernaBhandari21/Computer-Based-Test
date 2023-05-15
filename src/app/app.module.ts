@@ -38,6 +38,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { UploadQuestionsComponent } from './upload-questions/upload-questions.component';
 import { TestStructureComponent } from './test-structure/test-structure.component';
 import { CreateTestComponent } from './create-test/create-test.component';
+import { TestScreenComponent } from './test-screen/test-screen.component';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 @NgModule({
@@ -57,7 +59,8 @@ import { CreateTestComponent } from './create-test/create-test.component';
     ManageQuestionsComponent,
     UploadQuestionsComponent,
     TestStructureComponent,
-    CreateTestComponent
+    CreateTestComponent,
+    TestScreenComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +79,8 @@ import { CreateTestComponent } from './create-test/create-test.component';
     MatSelectModule,
     MatCheckboxModule,
     FormsModule,
-    CKEditorModule
+    CKEditorModule,
+    MatRadioModule
   ],
   providers: [ MultilevelMenuService,
           ],  bootstrap: [AppComponent]
