@@ -1,6 +1,6 @@
 mat-toolbar {
     padding-inline: 25px;
-    background: #fff;
+    background: black;
     box-shadow: -9px 0 20px rgba(33, 38, 45, 0.1);
 }
 mat-toolbar img {
@@ -17,6 +17,6 @@ div {
 }
 
 .logoHeading{
-    color:#FB5353;
+    color:white;
     /* color: black; */
 }

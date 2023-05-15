@@ -5,6 +5,7 @@ import { StudentRegistrationComponent } from './student-registration/student-reg
 import { TeacherRegistrationComponent } from './teacher-registration/teacher-registration.component';
 import { QuestionBankComponent } from './question-bank/question-bank.component';
 import { CollectionStructureComponent } from './collection-structure/collection-structure.component';
+import { TestStructureComponent } from './test-structure/test-structure.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path:'collection-structure',
     component:CollectionStructureComponent
+  },
+  {
+    path:'test-structure',
+    component:TestStructureComponent
   }
 ];
 

@@ -25,3 +25,8 @@ mat-sidenav-content {
 mat-sidenav-content .padding-plz {
     padding: 25px;
 }
+
+mat-sidenav{
+    border-right: 2px solid;
+    background-color: beige;
+}

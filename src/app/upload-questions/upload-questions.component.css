@@ -1,0 +1,8 @@
+.upload-ques-container {
+    display: flex;
+    height: 500px;
+    border: 1px solid black;
+    background: white;
+    border-radius: 10px;
+    width: 100%;
+  }

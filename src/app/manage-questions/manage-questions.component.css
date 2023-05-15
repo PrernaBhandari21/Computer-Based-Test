@@ -27,14 +27,19 @@ button{
     border: 1px solid black;
     border-radius: 10px;
     margin: 10px;
-    height: 400px;
+    height: 450px;
     padding: 10px;
 }
 
-.ckeditor-container .ck-editor__editable {
-    height: 200px;
-}
 
+  .addQues{
+display: flex;
+justify-content: space-between;
+  }
 
-  
-  
+  .showQues{
+    width: 45%;
+    padding: 8px;
+    height: 285px;
+    overflow: auto;
+  }

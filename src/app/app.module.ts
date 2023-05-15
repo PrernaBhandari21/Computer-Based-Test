@@ -35,6 +35,10 @@ import { FormsModule } from '@angular/forms';
 import { CollectionStructureComponent } from './collection-structure/collection-structure.component';
 import { ManageQuestionsComponent } from './manage-questions/manage-questions.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { UploadQuestionsComponent } from './upload-questions/upload-questions.component';
+import { TestStructureComponent } from './test-structure/test-structure.component';
+import { CreateTestComponent } from './create-test/create-test.component';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +54,10 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     AddEditTeacherComponent,
     QuestionBankComponent,
     CollectionStructureComponent,
-    ManageQuestionsComponent
+    ManageQuestionsComponent,
+    UploadQuestionsComponent,
+    TestStructureComponent,
+    CreateTestComponent
   ],
   imports: [
     BrowserModule,

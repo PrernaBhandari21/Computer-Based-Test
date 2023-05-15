@@ -2,3 +2,35 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.ck-editor__editable_inline {
+    height: 270px;
+    overflow-y: scroll;
+}
+
+mat-list{
+    height: 84vh;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 16px;
+    position: relative;
+    height: inherit;
+    font-size: 20px !important;
+    font-family: cursive !important;
+}
+
+.mat-list-base:hover .mat-list-item:hover .mat-list-item-content:hover, .mat-list-base:hover .mat-list-option:hover .mat-list-item-content :hover{
+    color: blue !important;
+}
+
+.float-left {
+    float: left;
+}
+

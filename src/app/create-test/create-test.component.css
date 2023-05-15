@@ -1,0 +1,76 @@
+.container-background {
+    background-color: #FFF;
+}
+
+.page-container {
+    padding: 0px;
+    height: 81.9vh;
+    border-radius: 0 2.2vh 2.2vh 2.2vh;
+}
+
+.tab-content > .active {
+    display: block;
+}
+
+
+.fade.in {
+    opacity: 1;
+}
+
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+
+.test-page {
+    padding: 3.63vh 2.7vw;
+    height: 100%;
+}
+
+.font-14 {
+    font-size: 14px !important;
+}
+.menu-bar {
+    height: 3vh;
+}
+
+.Semibold {
+    font-family: SF Display-Semibold;
+    font-weight: 600;
+}
+.float-left {
+    float: left;
+}
+.sub-menu {
+    line-height: 3vh;
+    width: 25%;
+    padding-right: 1vw;
+}
+
+.float-right {
+    float: right;
+}
+
+.caret-right {
+    line-height: 3vh;
+}
+
+.float-left {
+    float: left;
+}
+.step-check {
+    margin: 0 7px;
+    line-height: 3vh;
+    display: none;
+}
+
+.Semibold {
+    font-family: SF Display-Semibold;
+    font-weight: 600;
+}
+
+a{
+    color: #707070 !important;
+}

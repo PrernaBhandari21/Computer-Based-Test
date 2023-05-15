@@ -44,31 +44,25 @@ export class SidemenuComponent implements OnInit {
         link:"/question-bank",
         icon:"redeem"
       },
+      
       {
-        label:"All Vendor",
-        link:"/all-vendor",
-        icon:"people_outline"
+        label:"Tests",
+        link:"/test-structure",
+        icon:"redeem"
       },
+
       {
-        label:"Bookings",
-        link:"/bookings",
-        icon:"account_balance_wallet"
+        label:"Reports",
+        link:"/question-bank",
+        icon:"redeem"
       },
+      
       {
-        label:"Enquiries",
-        link:"/enquiryForms",
-        icon:"question_answer"
+        label:"Proctoring",
+        link:"/question-bank",
+        icon:"redeem"
       },
-      {
-        label:"Ratings",
-        link:"/ratings",
-        icon:"stars"
-      },
-      {
-        label:"Settings",
-        link:"/settings",
-        icon:"settings"
-      },
+      
       {
 			  label: "Logout",
 			  // link: "/",
