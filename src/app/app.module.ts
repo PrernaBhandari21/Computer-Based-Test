@@ -40,6 +40,8 @@ import { TestStructureComponent } from './test-structure/test-structure.componen
 import { CreateTestComponent } from './create-test/create-test.component';
 import { TestScreenComponent } from './test-screen/test-screen.component';
 import { MatRadioModule } from '@angular/material/radio';
+import { QuestionsCoverPageComponent } from './questions-cover-page/questions-cover-page.component';
+import { PublishTestsComponent } from './publish-tests/publish-tests.component';
 
 
 @NgModule({
@@ -61,6 +63,8 @@ import { MatRadioModule } from '@angular/material/radio';
     TestStructureComponent,
     CreateTestComponent,
     TestScreenComponent,
+    QuestionsCoverPageComponent,
+    PublishTestsComponent,
   ],
   imports: [
     BrowserModule,

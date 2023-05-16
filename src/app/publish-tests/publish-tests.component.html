@@ -1,0 +1,45 @@
+<mat-table [dataSource]="dataSource" class="mat-table">
+  <!-- S.No. Column -->
+  <ng-container matColumnDef="index">
+    <mat-header-cell *matHeaderCellDef>S.No.</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ getIndex(row) }}</mat-cell>
+  </ng-container>
+
+  <!-- Test Name Column -->
+  <ng-container matColumnDef="testName">
+    <mat-header-cell *matHeaderCellDef>Test Name</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ row.testName }}</mat-cell>
+  </ng-container>
+
+  <!-- Publish Date & Time Column -->
+  <ng-container matColumnDef="publishDateTime">
+    <mat-header-cell *matHeaderCellDef>Publish Date & Time</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ row.publishDateTime }}</mat-cell>
+  </ng-container>
+
+  <!-- Start Date & Time Column -->
+  <ng-container matColumnDef="startDate">
+    <mat-header-cell *matHeaderCellDef>Start Date & Time</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ row.startDate }}</mat-cell>
+  </ng-container>
+
+  <!-- Test Status Column -->
+  <ng-container matColumnDef="testStatus">
+    <mat-header-cell *matHeaderCellDef>Test Status</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{ row.testStatus }}</mat-cell>
+  </ng-container>
+
+  <!-- Action Column -->
+  <ng-container matColumnDef="action">
+    <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-icon (click)="editTest(row)">visibility</mat-icon>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Table Header Rows -->
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+  <!-- Table Data Rows -->
+  <mat-row *matRowDef="let row; columns: displayedColumns" (click)="selectRow(row)" [class.highlighted]="row === selectedRow"></mat-row>
+</mat-table>

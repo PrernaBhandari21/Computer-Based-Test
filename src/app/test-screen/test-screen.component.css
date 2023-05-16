@@ -38,11 +38,12 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
+    margin: 16px;
   }
   
   .question-circle {
     width: 30px;
-    height: 30px;
+    height: 40px;
     border-radius: 50%;
     border: 1px solid #ccc;
     background-color: #fff;
@@ -52,6 +53,9 @@
     font-size: 14px;
     margin-right: 10px;
     margin-bottom: 10px;
+    
+    /* Updated styles */
+    flex-basis: calc(20% - 10px); /* Each circle takes 20% of the container width minus margin-right */
   }
   
   .question-circle.active {

@@ -6,6 +6,8 @@ import { TeacherRegistrationComponent } from './teacher-registration/teacher-reg
 import { QuestionBankComponent } from './question-bank/question-bank.component';
 import { CollectionStructureComponent } from './collection-structure/collection-structure.component';
 import { TestStructureComponent } from './test-structure/test-structure.component';
+import { TestScreenComponent } from './test-screen/test-screen.component';
+import { QuestionsCoverPageComponent } from './questions-cover-page/questions-cover-page.component';
 
 const routes: Routes = [
   {
@@ -31,6 +33,14 @@ const routes: Routes = [
   {
     path:'test-structure',
     component:TestStructureComponent
+  },
+  {
+    path:'test-screen',
+    component:TestScreenComponent
+  },
+  {
+    path:'questions-cover-page',
+    component:QuestionsCoverPageComponent
   }
 ];
 
