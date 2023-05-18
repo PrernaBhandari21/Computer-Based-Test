@@ -35,7 +35,9 @@ const ELEMENT_DATA: Student[] = [
 })
 export class RegisterStudentComponent implements OnInit {
 
-  constructor(private dialog : MatDialog) { }
+  constructor(
+    private dialog : MatDialog
+    ) { }
 
   ngOnInit(): void {
   }

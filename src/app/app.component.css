@@ -19,7 +19,7 @@
 }
 mat-sidenav-content {
     position: relative;
-    background-color: #f6f6f7;
+    background-color: white;
 }
 
 mat-sidenav-content .padding-plz {

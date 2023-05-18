@@ -1,0 +1,128 @@
+<div id="test-basic-info" class="tab-pane fade active in mt-5 mb-4">
+    <div class="font-14 test-row" >
+        <mat-icon>play_arrow</mat-icon><div style="width: 15%;">Enter Test Name  :</div>
+        <mat-form-field class="example-full-width ms-5" style="width: 65%;" appearance="outline">
+            <input matInput [formControl]="testNameFormControl" placeholder="Test Name">
+            <mat-error *ngIf="testNameFormControl.invalid">
+              Test Name is required
+            </mat-error>
+          </mat-form-field>
+          
+     </div>
+</div>
+
+<div id="test-basic-info" class="tab-pane fade active in mt-5">
+    <div class="font-14 test-row">
+      <mat-icon>play_arrow</mat-icon>
+      <div style="width: 15%;">Choose Test Category :</div>
+      <mat-form-field class="example-full-width ms-5" appearance="outline">
+        <mat-label>Group</mat-label>
+        <mat-select [formControl]="groupFormControl" placeholder="Select Group" [disableOptionCentering]="true">
+          <mat-option *ngFor="let group of groups" [value]="group">
+            {{ group }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width ms-5" appearance="outline">
+        <mat-label>Subgroup</mat-label>
+        <mat-select [formControl]="subgroupFormControl" placeholder="Select Subgroup" [disableOptionCentering]="true">
+          <mat-option *ngFor="let subgroup of subgroups" [value]="subgroup">
+            {{ subgroup }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  
+  <div id="test-basic-info" class="tab-pane fade active in mt-5">
+    <div class="font-14 test-row">
+      <mat-icon>play_arrow</mat-icon>
+      <div style="width: 15%;">Choose Test Type :</div>
+      <mat-form-field class="example-full-width ms-5" appearance="outline">
+        <mat-label>Test</mat-label>
+        <mat-select [formControl]="groupFormControl" placeholder="Select Test" [disableOptionCentering]="true">
+          <mat-option *ngFor="let test of testTypes" [value]="test">
+            {{ test }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+     
+    </div>
+  </div>
+
+  <div id="test-basic-info" class="tab-pane fade active in mt-5">
+    <div class="font-14 test-row">
+      <mat-icon>play_arrow</mat-icon>
+      <div style="width: 15%;">Test Settings :</div>               
+    </div>
+
+    <form>
+        <div class="checkboxRow">
+          <div class="checkboxContainer">
+            <mat-checkbox></mat-checkbox>
+            <mat-label>Shuffle questions within section</mat-label>
+          </div>
+        
+          <div class="checkboxContainer">
+            <mat-checkbox></mat-checkbox>
+            <mat-label>Full screen mode mandatory to attempt test</mat-label>
+          </div>
+        </div>
+
+        <div class="checkboxRow">
+            <div class="checkboxContainer">
+              <mat-checkbox></mat-checkbox>
+              <mat-label>Show on-screen Calculator</mat-label>
+            </div>
+          
+            <div class="checkboxContainer">
+              <mat-checkbox></mat-checkbox>
+              <mat-label>Show score card to student after submitting test</mat-label>
+            </div>
+          </div>
+
+          <div class="checkboxRow">
+            <div class="checkboxContainer">
+              <mat-checkbox></mat-checkbox>
+              <mat-label>Shuffle question options</mat-label>
+            </div>
+          
+            <div class="checkboxContainer">
+              <mat-checkbox></mat-checkbox>
+              <mat-label>Assign questions randomly from a pool to each student</mat-label>
+            </div>
+          </div>
+
+          <div class="checkboxRow">
+            <div class="checkboxContainer">
+              <mat-checkbox></mat-checkbox>
+              <mat-label>Perform section-wise time validation</mat-label>
+            </div>
+          
+            <div class="checkboxContainer">
+              <mat-checkbox></mat-checkbox>
+              <mat-label>Perform case sensitive comparison for Text-answer questions</mat-label>
+            </div>
+          </div>
+
+          <div class="checkboxRow">
+            <div class="checkboxContainer">
+              <mat-checkbox></mat-checkbox>
+              <mat-label>Enable test proctoring</mat-label>
+            </div>
+          
+            
+          </div>
+      </form>
+      
+  </div>
+
+  <div id="test-basic-info" class="tab-pane fade active in mt-3 ">
+    <div class="font-14 test-row" >
+        <div style="width: 25%;">Max. attempts allowed for test  :</div>
+        <mat-form-field class="example-full-width ms-5" style="width: 25%;" appearance="outline">
+            <input matInput type="number" [formControl]="testNameFormControl" placeholder="Enter here">
+        </mat-form-field>
+          
+     </div>
+</div>

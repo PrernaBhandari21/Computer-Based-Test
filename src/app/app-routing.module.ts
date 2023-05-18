@@ -8,6 +8,9 @@ import { CollectionStructureComponent } from './collection-structure/collection-
 import { TestStructureComponent } from './test-structure/test-structure.component';
 import { TestScreenComponent } from './test-screen/test-screen.component';
 import { QuestionsCoverPageComponent } from './questions-cover-page/questions-cover-page.component';
+import { CreateTestComponent } from './create-test/create-test.component';
+import { AddBasicDetailsComponent } from './add-basic-details/add-basic-details.component';
+import { MakeTestStructureComponent } from './make-test-structure/make-test-structure.component';
 
 const routes: Routes = [
   {
@@ -34,13 +37,25 @@ const routes: Routes = [
     path:'test-structure',
     component:TestStructureComponent
   },
-  {
-    path:'test-screen',
-    component:TestScreenComponent
-  },
+  { path: 'test-screen', 
+  component: TestScreenComponent, 
+  data: { showHeaderSidemenu: false } },
+
   {
     path:'questions-cover-page',
-    component:QuestionsCoverPageComponent
+    component:QuestionsCoverPageComponent,
+    data: { showHeaderSidemenu: false }
+  },
+  {
+    path: 'create-test',
+    component: CreateTestComponent,
+    children: [
+      { path: '', redirectTo: 'basic-details', pathMatch: 'full' },
+      { path: 'basic-details', component: AddBasicDetailsComponent },
+      { path: 'make-test-structure', component: MakeTestStructureComponent },
+      { path: 'add-question', component: AddBasicDetailsComponent },
+      { path: 'test-preview', component: TestStructureComponent },
+    ]
   }
 ];
 

@@ -1,16 +1,23 @@
+.test-screen-component{
+  height: 81vh;
+  background-color: white;
+}
+
 .container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    height: 81vh;
     background-color: white;
     padding: 0px;
     border-radius: 0 0vh 2.2vh 2.2vh;
+    margin-right: 0;
       }
   
   .question-section {
-    flex: 1;
+    width: 80%;
     padding: 20px;
+    padding-right: 0;
+    padding-left: 0;
   }
   
   .question-number {
@@ -73,6 +80,73 @@
   .quesDisplay{
     display: flex;
     flex-direction: column;
-     justify-content: space-between;
      height: 60vh;
   }
+
+
+  .test-heading{
+    width: 100%;
+    font-size: 17px;
+    font-weight: 400;
+  }
+
+  .instruction-page-btn button{
+    display: flex;
+    align-items: center;
+    /* height: 48px; */
+    width: 118px;
+    justify-content: space-between;
+  }
+
+  .lowerLevel{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid lightgray;
+    margin-top: 16.2vh;
+    padding-top: 3.3vh;
+    padding-right: 14px;
+  }
+
+  .rightSide{
+    height: 94vh;
+    width: 25%;
+    border-left: 2px solid lightgrey;
+}
+
+
+  .question-navigation{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .question-list-box{
+    height: 73%;
+    overflow-y: auto;
+    padding-left: 28px;
+
+  }
+
+  /* Thin scrollbar styles */
+.question-list-box::-webkit-scrollbar {
+  width: 5px;
+}
+
+.question-list-box::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.question-list-box::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+.question-list-box::-webkit-scrollbar-thumb:hover {
+  background-color: #858181;
+}
+
+.submitTest{
+  border-top: 2px solid lightgray;
+  margin-top: 10px;
+}

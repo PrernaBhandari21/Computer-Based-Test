@@ -1,0 +1,23 @@
+.instructions-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+  }
+  
+  .instructions-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .instructions-list {
+    list-style-type: decimal;
+    padding-left: 20px;
+  }
+  
+  .instruction-item {
+    margin-bottom: 5px;
+  }
+  
