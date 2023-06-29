@@ -45,10 +45,10 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    margin: 16px;
+    margin: 12px;
   }
   
-  .question-circle {
+  /* .question-circle {
     width: 30px;
     height: 40px;
     border-radius: 50%;
@@ -60,10 +60,22 @@
     font-size: 14px;
     margin-right: 10px;
     margin-bottom: 10px;
-    
-    /* Updated styles */
-    flex-basis: calc(20% - 10px); /* Each circle takes 20% of the container width minus margin-right */
-  }
+    flex-basis: calc(20% - 10px); 
+  } */
+
+  .question-circle{
+    width: 32px;
+    height: 33px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
   
   .question-circle.active {
     background-color: #007bff;
@@ -80,7 +92,9 @@
   .quesDisplay{
     display: flex;
     flex-direction: column;
-     height: 60vh;
+     /* height: 60vh; */
+     height: 69vh;
+     justify-content: space-between;
   }
 
 
@@ -103,7 +117,8 @@
     display: flex;
     justify-content: space-between;
     border-top: 2px solid lightgray;
-    margin-top: 16.2vh;
+    /* margin-top: 16.2vh; */
+    margin-top: 5vh;
     padding-top: 3.3vh;
     padding-right: 14px;
   }
@@ -116,13 +131,18 @@
 
 
   .question-navigation{
-    width: 30%;
+    width: 45%;
     display: flex;
     justify-content: space-between;
   }
 
+  .question-navigation button{
+    display: flex;
+    align-items: center;
+  }
+
   .question-list-box{
-    height: 73%;
+    height: 81%;
     overflow-y: auto;
     padding-left: 28px;
 
@@ -149,4 +169,11 @@
 .submitTest{
   border-top: 2px solid lightgray;
   margin-top: 10px;
+  text-align: center;
+  padding: 20px;
+}
+
+.submitTest button{
+  width: 100%;
+  margin-top: 20px;
 }

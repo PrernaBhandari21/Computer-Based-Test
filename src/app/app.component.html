@@ -1,4 +1,4 @@
-<ng-container >
+<ng-container *ngIf="isLoggedIn">
   <mat-sidenav-container class="example-container">
     <mat-sidenav #sidenav mode="side" opened="true" class="example-sidenav" *ngIf="showHeaderSidemenu">
       <app-sidemenu></app-sidemenu>
@@ -6,10 +6,14 @@
     
     <mat-sidenav-content perfectScrollbar style="padding-top: 25px;">
       <!-- <app-header *ngIf="showHeaderSidemenu"></app-header> -->
-      
       <div style="padding-inline: 30px;">
         <router-outlet></router-outlet>
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
+</ng-container>
+
+
+<ng-container *ngIf="!isLoggedIn">
+ <app-login></app-login>
 </ng-container>

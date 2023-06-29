@@ -15,18 +15,21 @@
           {{ currentQuestion }}
         </div>
   
-        <div class="options">
-          <mat-radio-group [(ngModel)]="selectedOption">
-            <mat-radio-button *ngFor="let option of currentQuestionOptions; let i = index" [value]="i" [checked]="selectedOption === i" (click)="selectOption(i)">
-              {{ option }}
-            </mat-radio-button>
-          </mat-radio-group>
+        <div>
+          <div class="options">
+            <mat-radio-group [(ngModel)]="selectedOption">
+              <mat-radio-button *ngFor="let option of currentQuestionOptions; let i = index" [value]="i" [checked]="selectedOption === i" (click)="selectOption(i)">
+                {{ option }}
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+          
+  
+          <div class="clear-response-btn mt-3">
+            <button type="button" class="btn btn-outline-primary btn-sm" (click)="clearSelectedOption(currentQuestionIndex)">Clear Response</button>
+          </div>
         </div>
         
-
-        <div class="clear-response-btn mt-3">
-          <button type="button" class="btn btn-outline-primary btn-sm" (click)="clearSelectedOption(currentQuestionIndex)">Clear Response</button>
-        </div>
     </div>
 
 
@@ -34,10 +37,11 @@
     <div class="lowerLevel">
       <div class="question-navigation">
         <button class="btn btn-outline-primary btn-sm" [disabled]="currentQuestionIndex === 0" (click)="navigateToQuestion(currentQuestionIndex - 1)">
+          <mat-icon>arrow_back_ios</mat-icon>
           Previous Question
         </button>
         <button class="btn btn-outline-primary btn-sm" [disabled]="currentQuestionIndex === totalQuestions - 1" (click)="navigateToQuestion(currentQuestionIndex + 1)">
-          Next Question
+          Next Question <mat-icon>arrow_forward_ios</mat-icon>
         </button>
       </div>
       
@@ -62,7 +66,7 @@
     </div>
 
     <div class="submitTest">
-      <button type="button" class="btn btn-outline-primary btn-sm" (click)="submitTest()">Submit</button>
+      <button type="button" class="btn btn-outline-primary btn-sm" (click)="submitTest()">Submit Test</button>
     </div>
 
   </div>

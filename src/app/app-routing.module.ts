@@ -55,6 +55,7 @@ const routes: Routes = [
       { path: 'make-test-structure', component: MakeTestStructureComponent },
       { path: 'add-question', component: AddBasicDetailsComponent },
       { path: 'test-preview', component: TestStructureComponent },
+     
     ]
   }
 ];

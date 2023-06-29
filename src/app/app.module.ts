@@ -45,6 +45,8 @@ import { PublishTestsComponent } from './publish-tests/publish-tests.component';
 import { InstructionPageComponent } from './instruction-page/instruction-page.component';
 import { MakeTestStructureComponent } from './make-test-structure/make-test-structure.component';
 import { AddBasicDetailsComponent } from './add-basic-details/add-basic-details.component';
+import { LoginComponent } from './shared/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -71,6 +73,7 @@ import { AddBasicDetailsComponent } from './add-basic-details/add-basic-details.
     InstructionPageComponent,
     MakeTestStructureComponent,
     AddBasicDetailsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,7 +93,8 @@ import { AddBasicDetailsComponent } from './add-basic-details/add-basic-details.
     MatCheckboxModule,
     FormsModule,
     CKEditorModule,
-    MatRadioModule
+    MatRadioModule,
+    HttpClientModule
   ],
   providers: [ MultilevelMenuService,
           ],  bootstrap: [AppComponent]

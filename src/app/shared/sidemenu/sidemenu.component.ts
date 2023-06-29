@@ -25,7 +25,7 @@ export class SidemenuComponent implements OnInit {
     this.appitems=[
       {
         label:"Dashboard",
-        link:"/",
+        link:"/dashboard",
         icon:"question_answer"
       },
       {
