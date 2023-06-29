@@ -53,7 +53,7 @@ export class RegisterStudentComponent implements OnInit {
 
   openEditDialog(element?: any): void {
     const dialogRef = this.dialog.open(AddEditStudentComponent, {
-      width: '400px', // Adjust the width as needed
+      width: '600px', // Adjust the width as needed
       data: element // Pass the element data to the dialog
     });
   

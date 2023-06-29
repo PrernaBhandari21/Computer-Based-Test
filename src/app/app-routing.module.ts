@@ -11,12 +11,17 @@ import { QuestionsCoverPageComponent } from './questions-cover-page/questions-co
 import { CreateTestComponent } from './create-test/create-test.component';
 import { AddBasicDetailsComponent } from './add-basic-details/add-basic-details.component';
 import { MakeTestStructureComponent } from './make-test-structure/make-test-structure.component';
+import { LoginComponent } from './shared/login/login.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:DashboardComponent
+    path: '',
+    component: DashboardComponent
   },
+  {
+    path:'login',
+    component:LoginComponent,
+    data: { showHeaderSidemenu: false } },
   {
     path:'student-registration',
     component:StudentRegistrationComponent

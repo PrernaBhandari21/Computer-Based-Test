@@ -34,3 +34,20 @@ mat-list{
     float: left;
 }
 
+mat-drawer-inner-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.mat-tab-label-content{
+    /* background: pink; */
+    padding: 4px;
+    border: 1px solid;
+    border-radius: 5px;
+    background: white;
+    padding-top: 14px;
+    padding-bottom: 13px;
+}
+

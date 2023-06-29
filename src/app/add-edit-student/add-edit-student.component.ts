@@ -1,6 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SHA512 } from 'crypto-js';
+
 
 @Component({
   selector: 'app-add-edit-student',
@@ -25,12 +27,21 @@ export class AddEditStudentComponent implements OnInit {
   
 
     this.editForm = this.formBuilder.group({
-      studentName: [this.data?.StudentName || '', Validators.required],
+      name: [this.data?.name || '', Validators.required],
+
+      email: [{ value: this.data?.email || '', disabled: true }, Validators.required],
+
       phoneNo: [{ value: this.data?.phoneNo || '', disabled: true }, Validators.required],
+
+      password:[{ value: this.data?.password || '', disabled: true }, Validators.required],
+
+      registrationNo: [{ value: this.data?.registrationNo || 0, disabled: true }, Validators.required],
+
       group: [{ value: this.data?.group || '', disabled: true }, Validators.required],
-      userId: [{ value: this.data?.userId || '', disabled: true }, Validators.required],
+      
       subGroup: [{ value: this.data?.subGroup || '', disabled: true }, Validators.required],
-      registeredDate: [{ value: this.data?.registeredDate || '', disabled: true }, Validators.required],
+
+      role:["student"]
 
 
     });
@@ -45,11 +56,11 @@ export class AddEditStudentComponent implements OnInit {
     }
 
         // Check if email/userId has a value and enable/disable the control accordingly
-        if (this.editForm.get('userId')?.value) {
-          this.editForm.get('userId')?.disable();
+        if (this.editForm.get('email')?.value) {
+          this.editForm.get('email')?.disable();
         } else {
           console.log("no");
-          this.editForm.get('userId')?.enable();
+          this.editForm.get('email')?.enable();
         }
 
        // Check if group has a value and enable/disable the control accordingly
@@ -59,6 +70,28 @@ export class AddEditStudentComponent implements OnInit {
     } else {
       this.editForm.get('group')?.enable();
     }
+
+
+        // Check if registrationNo has a value and enable/disable the control accordingly
+        if (this.editForm.get('registrationNo')?.value) {
+          console.log("yes");
+          this.editForm.get('registrationNo')?.disable();
+        } else {
+          console.log("no");
+          this.editForm.get('registrationNo')?.enable();
+        }
+
+        
+
+            // Check if password has a value and enable/disable the control accordingly
+    if (this.editForm.get('password')?.value) {
+      console.log("yes");
+      this.editForm.get('password')?.disable();
+    } else {
+      console.log("no");
+      this.editForm.get('password')?.enable();
+    }
+
 
 // Set the initial value of the group form control after the form is initialized
 if (this.data?.group) {
@@ -83,9 +116,46 @@ if (this.data?.subGroup) {
   // Function to save the form data and close the dialog
   save() {
     if (this.editForm.valid) {
+
+
+      if(this.editForm.value?.password){
+        const password = this.editForm.value.password;
+        const hashedPassword = SHA512(password).toString();
+        this.editForm.value.password = hashedPassword
+
+      }
+
       const formData = this.editForm.value;
-      console.log(formData);
-      this.dialogRef.close(formData);
+
+      const { name, email, phoneNo , password, registrationNo , group, subGroup, role} = this.editForm.value;
+      const postData = { name, email,password, registrationNo, group, subGroup, phoneNo, role};
+      console.log(postData);
+  
+  
+      fetch('/studentAuth', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(postData)
+      })
+        .then(response => {
+          console.log('Response from server:', response);
+          if (response.ok) {
+            // Successful operation
+            alert("Student Created Successfully !!");
+          } else {
+            // Handle error case
+            console.error('Error in creation of student. Status:', response.status);
+            alert('Error in creating student. Please try again.');
+          }
+        })
+        .catch(error => {
+          console.error('EError in creation of student. Error : ', error);
+          alert('Error in creating student. Please try again.');
+        });
+
+      // this.dialogRef.close(formData);
     }
   }
 

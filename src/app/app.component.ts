@@ -13,15 +13,6 @@ export class AppComponent {
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
-  isLoggedIn: boolean =false;
-  
-  
-  // {
-  //   // Example: Check if the user is logged in based on a login status variable
-  //   // return this.isLoggedInVariable;
-  //   return false; // Replace with your logic
-  // }
-
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
