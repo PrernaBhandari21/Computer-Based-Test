@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-test',
@@ -11,7 +11,8 @@ export class CreateTestComponent implements OnInit {
   
   activeStep: number = 1;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute,
+    private router : Router) {
   }
 
  
@@ -31,6 +32,27 @@ export class CreateTestComponent implements OnInit {
           break;
       }
     });
+  }
+
+  moveToNextStep() {
+    // Increment the activeStep
+    this.activeStep++;
+
+    // Navigate to the next step
+    switch (this.activeStep) {
+      case 2:
+        this.router.navigate(['/create-test/make-test-structure']);
+        break;
+      case 3:
+        this.router.navigate(['/create-test/add-question']);
+        break;
+      case 4:
+        this.router.navigate(['/create-test/test-preview']);
+        break;
+      // Add cases for additional steps if needed
+      default:
+        break;
+    }
   }
 
   setActiveStep(step: number) {

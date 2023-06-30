@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
 
 
   onSubmit(): void {
-    this.route.navigate([""]);
     if (this.registrationForm.valid) {
 
       if(this.registrationForm.value?.password){
@@ -60,21 +59,26 @@ export class LoginComponent implements OnInit {
             console.log('User Info:', response.user);
 
       localStorage.setItem('user', JSON.stringify(response.user));
-      if(response.user.role == "admin"){
-        this.route.navigate([""])
-        console.log("redirect to dashboard");
-      }else if(response.user.role == "student"){
-        this.route.navigate(["all-available-exams"])
-      }else if(response.user.role == "approver"){
-        this.route.navigate(["approver-dashboard"])
-      }
+      
 
       const storedUserString = localStorage.getItem('user');
       if (storedUserString) {
         const storedUser = JSON.parse(storedUserString);
         console.log('Stored User Info:', storedUser);
+
+
+
+        if(response.user.role == "admin"){
+          this.route.navigate([""])
+          console.log("redirect to dashboard");
+        }else if(response.user.role == "teacher"){
+          this.route.navigate(["edit-teacher-profile"])
+        }else if(response.user.role == "approver"){
+          this.route.navigate(["approver-dashboard"])
+        }
+
       } else {
-        console.log('User information not found in localStorage');
+        console.log('User information not found in localStorageeeeeeeeee');
       }
       
 

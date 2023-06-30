@@ -1,0 +1,29 @@
+<div class="editProfile_container">
+  <div class="img__container">
+    <img src="https://img.freepik.com/free-vector/status-update-concept-illustration_114360-1588.jpg?w=740&t=st=1688124581~exp=1688125181~hmac=9ae336e8e88427323b827237a07b69cdb94fabbf35ebe34ccee09196378c2b4b" alt="">
+  </div>
+  <div class="row justify-content-center mt-5 edit__form">
+    <div class="col-md-12">
+      <h1 class="text-center mb-4">Edit Profile</h1>
+      <form (ngSubmit)="onSubmit()" class="edit-form">
+        <div class="form-group">
+          <label for="username">Your Name</label>
+          <input type="text" class="form-control mt-1" id="username" placeholder="Username" [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="form-group mt-3">
+          <label for="email">Your Email</label>
+          <input type="email" class="form-control mt-1" id="email" placeholder="Email" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="form-group mt-3">
+          <label for="email">Your Phone No.</label>
+          <input type="email" class="form-control mt-1" id="email" placeholder="Email" [(ngModel)]="user.phoneNo" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="form-group mt-3">
+          <label for="password">Your Password</label>
+          <input type="password" class="form-control mt-1" id="password" placeholder="Password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mt-4">Save Details</button>
+      </form>
+    </div>
+  </div>
+</div>

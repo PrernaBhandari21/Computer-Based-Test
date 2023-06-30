@@ -50,7 +50,8 @@ export class TeacherRegistrationComponent implements OnInit {
 
   openEditDialog(element?: any): void {
     const dialogRef = this.dialog.open(AddEditTeacherComponent, {
-      width: '400px', // Adjust the width as needed
+      width: '800px', // Adjust the width as needed
+      height:'75vh',
       data: element // Pass the element data to the dialog
     });
   

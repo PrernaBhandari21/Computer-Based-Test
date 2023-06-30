@@ -8,7 +8,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 mat-list{
-    height: 84vh;
+    /* height: 84vh; */
+    height: 72vh;
     display: flex !important;
     flex-direction: column;
     justify-content: space-between;

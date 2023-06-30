@@ -1,40 +1,36 @@
 <div id="container" class="container-background tab-content page-container">
 
-    <div id="create-test-page" class="test-page tab-pane fade active in">
-      <div id="sub-menu" class="menu-bar font-14">
-        <div class="sub-menu float-left Semibold">
-          <span id="step1" class="float-left Semibold">1 : &nbsp;</span>
-          <a id="basic-info" class="text-color-imp float-left" [routerLink]="['/create-test/basic-details']" [ngClass]="{ 'active-step': activeStep === 1 }" aria-expanded="true" (click)="setActiveStep(1)">Basic Details</a>
-          <mat-icon class="float-right font-14 caret-right">keyboard_arrow_right</mat-icon>
-        </div>
-        <div class="sub-menu float-left">
-          <span id="step2" class="float-left Semibold">2 : &nbsp;</span>
-          <a id="test-skeleton" class="float-left text-color-imp disable-pointer-event" [routerLink]="['/create-test/make-test-structure']" [ngClass]="{ 'active-step': activeStep === 2 }" aria-expanded="true" (click)="setActiveStep(2)">Test Structure</a>
-          <mat-icon class="float-right font-14 caret-right">keyboard_arrow_right</mat-icon>
-        </div>
-        <div class="sub-menu float-left">
-          <span id="step3" class="float-left Semibold">3 : &nbsp;</span>
-          <a id="add-question" class="float-left text-color-imp disable-pointer-event" [routerLink]="['/create-test/add-question']" [ngClass]="{ 'active-step': activeStep === 3 }" aria-expanded="true" (click)="setActiveStep(3)">Add Question</a>
-          <mat-icon class="float-right font-14 caret-right">keyboard_arrow_right</mat-icon>
-        </div>
-        <div class="sub-menu float-left">
-          <a id="test-preview" class="float-left text-color-imp disable-pointer-event" [routerLink]="['/create-test/test-preview']" [ngClass]="{ 'active-step': activeStep === 4 }" aria-expanded="true" (click)="setActiveStep(4)">Test Preview</a>
-        </div>
+  <div id="create-test-page" class="test-page tab-pane fade active in">
+    <div id="sub-menu" class="menu-bar font-14">
+      <div class="sub-menu float-left Semibold">
+        <span id="step1" class="float-left Semibold">1 : &nbsp;</span>
+        <a id="basic-info" class="text-color-imp float-left" [routerLink]="['/create-test/basic-details']" [ngClass]="{ 'active-step': activeStep === 1 }" aria-expanded="true" (click)="setActiveStep(1)">Basic Details</a>
+        <mat-icon class="float-right font-14 caret-right">keyboard_arrow_right</mat-icon>
       </div>
-      
-
-        <div class="tab-content">
-          <router-outlet></router-outlet>
-        </div>
-
-
-        <div style="position: absolute; bottom: 10px;width: 90%;text-align: right; ">
-            <button type="button" class="btn btn-success m-2">Save</button>
-            <button type="button" class="btn btn-outline-primary m-2">Save And Continue</button>
-
-        </div>
-
+      <div class="sub-menu float-left">
+        <span id="step2" class="float-left Semibold">2 : &nbsp;</span>
+        <a id="test-skeleton" class="float-left text-color-imp disable-pointer-event" [routerLink]="['/create-test/make-test-structure']" [ngClass]="{ 'active-step': activeStep === 2 }" aria-expanded="true" (click)="setActiveStep(2)">Test Structure</a>
+        <mat-icon class="float-right font-14 caret-right">keyboard_arrow_right</mat-icon>
+      </div>
+      <div class="sub-menu float-left">
+        <span id="step3" class="float-left Semibold">3 : &nbsp;</span>
+        <a id="add-question" class="float-left text-color-imp disable-pointer-event" [routerLink]="['/create-test/add-question']" [ngClass]="{ 'active-step': activeStep === 3 }" aria-expanded="true" (click)="setActiveStep(3)">Add Question</a>
+        <mat-icon class="float-right font-14 caret-right">keyboard_arrow_right</mat-icon>
+      </div>
+      <div class="sub-menu float-left">
+        <a id="test-preview" class="float-left text-color-imp disable-pointer-event" [routerLink]="['/create-test/test-preview']" [ngClass]="{ 'active-step': activeStep === 4 }" aria-expanded="true" (click)="setActiveStep(4)">Test Preview</a>
+      </div>
     </div>
 
+    <div class="tab-content">
+      <router-outlet></router-outlet>
+    </div>
+
+    <div style="position: absolute; bottom: 10px; width: 90%; text-align: right;">
+      <button type="button" class="btn btn-success m-2">Save</button>
+      <button type="button" class="btn btn-outline-primary m-2" (click)="moveToNextStep()">Save And Continue</button>
+    </div>
+
+  </div>
 
 </div>

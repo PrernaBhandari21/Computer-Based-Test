@@ -21,37 +21,33 @@
                 <div class="section-attributes">
                     <div class="label-input-container">
                       <label for="test-duration">Test Duration : </label>
-                      <mat-form-field appearance="outline">
+                      <!-- <mat-form-field appearance="outline">
                         <input matInput type="text" id="test-duration" autofocus>
-                      </mat-form-field>
+                      </mat-form-field> -->
+                      <div>
+                        <input type="text" id="test-duration" autofocus>
+                      </div>
                     </div>
                   </div>
         
                   <div class="section-attributes">
                     <div class="label-input-container">
                       <label for="test-duration">Test Marks :</label>
-                      <mat-form-field appearance="outline">
+                      <!-- <mat-form-field appearance="outline">
                         <input matInput type="text" id="test-duration" autofocus>
-                      </mat-form-field>
+                      </mat-form-field> -->
+
+                      <div>
+                        <input type="text" id="test-duration" autofocus>
+                      </div>
                     </div>
                   </div>
         
-                  <div class="section-attributes">
-                    <div class="label-input-container">
-                      <label for="test-duration">Total Questions :</label>
-                      <mat-form-field appearance="outline">
-                        <input matInput type="text" id="test-duration" autofocus>
-                      </mat-form-field>
-                    </div>
-        
-        
-        
-                  
-                  </div>
+                
             </div>
 
             <div class="rightSide">
-                <div class="section-attributes">
+                <!-- <div class="section-attributes">
                     <div class="label-input-container">
                       <label for="test-duration">Remaining Time : </label>
                       <mat-form-field appearance="outline">
@@ -67,12 +63,24 @@
                         <input matInput type="text" id="test-duration" autofocus>
                       </mat-form-field>
                     </div>
+                  </div> -->
+
+                  <div class="section-attributes">
+                    <div class="label-input-container">
+                      <label for="test-duration">Total Questions :</label>
+                      <!-- <mat-form-field appearance="outline">
+                        <input matInput type="text" id="test-duration" autofocus>
+                      </mat-form-field> -->
+                      <div>
+                        <input type="text" id="test-duration" autofocus>
+                      </div>
+                    </div>
                   </div>
             </div>
 
             
         </div>
-        <div style="width: 97% ; margin-left: 10px;margin-right: 10px;">
+        <div class="editor-box">
             <ckeditor #editorRef [editor]="Editor"></ckeditor>
         
         </div>

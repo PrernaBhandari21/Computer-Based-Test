@@ -47,6 +47,9 @@ import { MakeTestStructureComponent } from './make-test-structure/make-test-stru
 import { AddBasicDetailsComponent } from './add-basic-details/add-basic-details.component';
 import { LoginComponent } from './shared/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddQuestionsComponent } from './add-questions/add-questions.component';
+import { PreviewTestComponent } from './preview-test/preview-test.component';
+import { EditTeacherProfileComponent } from './teacher/edit-teacher-profile/edit-teacher-profile.component';
 
 
 @NgModule({
@@ -74,6 +77,9 @@ import { HttpClientModule } from '@angular/common/http';
     MakeTestStructureComponent,
     AddBasicDetailsComponent,
     LoginComponent,
+    AddQuestionsComponent,
+    PreviewTestComponent,
+    EditTeacherProfileComponent,
   ],
   imports: [
     BrowserModule,

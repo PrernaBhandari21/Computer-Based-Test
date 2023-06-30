@@ -33,13 +33,13 @@ export class AddEditStudentComponent implements OnInit {
 
       phoneNo: [{ value: this.data?.phoneNo || '', disabled: true }, Validators.required],
 
-      password:[{ value: this.data?.password || '', disabled: true }, Validators.required],
+      password:[{ value: this.data?.password || '' }, Validators.required],
 
       registrationNo: [{ value: this.data?.registrationNo || 0, disabled: true }, Validators.required],
 
-      group: [{ value: this.data?.group || '', disabled: true }, Validators.required],
+      group: [{ value: this.data?.group || ''}, Validators.required],
       
-      subGroup: [{ value: this.data?.subGroup || '', disabled: true }, Validators.required],
+      subGroup: [{ value: this.data?.subGroup || ''}, Validators.required],
 
       role:["student"]
 
@@ -64,12 +64,12 @@ export class AddEditStudentComponent implements OnInit {
         }
 
        // Check if group has a value and enable/disable the control accordingly
-    if (this.editForm.get('group')?.value) {
-      console.log(this.editForm.get('group')?.value);
-      this.editForm.get('group')?.disable();
-    } else {
-      this.editForm.get('group')?.enable();
-    }
+    // if (this.editForm.get('group')?.value) {
+    //   console.log(this.editForm.get('group')?.value);
+    //   this.editForm.get('group')?.disable();
+    // } else {
+    //   this.editForm.get('group')?.enable();
+    // }
 
 
         // Check if registrationNo has a value and enable/disable the control accordingly
@@ -84,13 +84,13 @@ export class AddEditStudentComponent implements OnInit {
         
 
             // Check if password has a value and enable/disable the control accordingly
-    if (this.editForm.get('password')?.value) {
-      console.log("yes");
-      this.editForm.get('password')?.disable();
-    } else {
-      console.log("no");
-      this.editForm.get('password')?.enable();
-    }
+    // if (this.editForm.get('password')?.value) {
+    //   console.log("yes");
+    //   this.editForm.get('password')?.disable();
+    // } else {
+    //   console.log("no");
+    //   this.editForm.get('password')?.enable();
+    // }
 
 
 // Set the initial value of the group form control after the form is initialized
@@ -100,11 +100,11 @@ if (this.data?.group) {
 
 
        // Check if subgroup has a value and enable/disable the control accordingly
-       if (this.editForm.get('subGroup')?.value) {
-        this.editForm.get('subGroup')?.disable();
-      } else {
-        this.editForm.get('subGroup')?.enable();
-      }
+      //  if (this.editForm.get('subGroup')?.value) {
+      //   this.editForm.get('subGroup')?.disable();
+      // } else {
+      //   this.editForm.get('subGroup')?.enable();
+      // }
 
       // Set the initial value of the group form control after the form is initialized
 if (this.data?.subGroup) {
