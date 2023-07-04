@@ -48,7 +48,7 @@ export class RegisterStudentComponent implements OnInit {
    this.fetchStudents();
   }
 
-  displayedColumns: string[] = ['sno', 'name', 'email', 'group','subGroup','phoneNo','edit'];
+  displayedColumns: string[] = ['sno', 'name', 'email', 'group','subGroup','phoneNo','view'];
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
   applyFilter(event: Event) {

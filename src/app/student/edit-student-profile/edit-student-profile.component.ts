@@ -1,17 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-edit-teacher-profile',
-  templateUrl: './edit-teacher-profile.component.html',
-  styleUrls: ['./edit-teacher-profile.component.css']
+  selector: 'app-edit-student-profile',
+  templateUrl: './edit-student-profile.component.html',
+  styleUrls: ['./edit-student-profile.component.css']
 })
-export class EditTeacherProfileComponent implements OnInit {
+export class EditStudentProfileComponent implements OnInit {
   user: any;
+  groupTypes: string[] = ['School', 'Corporate', 'Individual'];
+subGroupTypes: string[] = ['Phase1', 'Phase2', 'Phase3', 'Vibgyor'];
 
   ngOnInit(): void {
     const storedUserString = localStorage.getItem('user');
     if (storedUserString) {
       this.user = JSON.parse(storedUserString);
+    } else {
+      this.user = {
+        name: '',
+        email: '',
+        phoneNo: '',
+        password: '',
+        group: '',
+        subGroup: ''
+      };
     }
   }
 
@@ -23,7 +34,7 @@ export class EditTeacherProfileComponent implements OnInit {
 
 
     //update in database !
-    fetch('/auth', {
+    fetch('/studentAuth', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

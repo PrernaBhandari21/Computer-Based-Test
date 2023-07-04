@@ -15,6 +15,9 @@ import { AddQuestionsComponent } from './add-questions/add-questions.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PreviewTestComponent } from './preview-test/preview-test.component';
 import { EditTeacherProfileComponent } from './teacher/edit-teacher-profile/edit-teacher-profile.component';
+import { StudentDashboardComponent } from './student/student-dashboard/student-dashboard.component';
+import { TestsComponent } from './student/tests/tests.component';
+import { EditStudentProfileComponent } from './student/edit-student-profile/edit-student-profile.component';
 
 const routes: Routes = [
   {
@@ -69,6 +72,18 @@ const routes: Routes = [
     path:'edit-teacher-profile',
     component:EditTeacherProfileComponent,
   },
+  {
+    path:"student-dashboard",
+    component:StudentDashboardComponent
+  },
+  {
+    path:"student-tests",
+    component:TestsComponent
+  } ,
+  {
+    path:'edit-student-profile',
+    component:EditStudentProfileComponent,
+  }
   
 ];
 

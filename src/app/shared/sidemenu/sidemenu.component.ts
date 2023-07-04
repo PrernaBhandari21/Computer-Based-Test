@@ -121,44 +121,33 @@ export class SidemenuComponent implements OnInit {
       }else if(this.storedUser.role == "student"){
         this.appitems=[
           {
+            label:"Edit Profile",
+            link:"/edit-student-profile",
+            icon:"edit"
+          },
+          {
             label:"Dashboard",
-            link:"/",
+            link:"/student-dashboard",
             icon:"question_answer"
           },
           {
-            label:"Student Registration",
-            link:"/student-registration",
-            icon:"group"
-          },
-          
-          {
-            label:"Teacher Registration",
-            link:"/teacher-registration",
-            icon:"group"
-          },
-          {
-            label:"Question-Bank",
-            link:"/question-bank",
-            icon:"redeem"
-          },
-          
-          {
             label:"Tests",
-            link:"/test-structure",
-            icon:"redeem"
+            link:"/student-tests",
+            icon:"group"
           },
-    
+             
           {
             label:"Reports",
             link:"/question-bank",
             icon:"redeem"
           },
-          
+
           {
-            label:"Proctoring",
+            label:"Test Screen",
             link:"/question-bank",
             icon:"redeem"
           },
+         
           {
             label:"Logout",
             link:"/login",

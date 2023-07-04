@@ -24,9 +24,11 @@
     "@ckeditor/ckeditor5-build-classic": "^37.1.0",
     "crypto-js": "^4.1.1",
     "ng-material-multilevel-menu": "^5.5.3",
+    "papaparse": "^5.4.1",
     "pg": "^8.11.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "xlsx": "^0.18.5",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -35,6 +37,7 @@
     "@angular/compiler-cli": "^14.2.0",
     "@types/crypto-js": "^4.1.1",
     "@types/jasmine": "~4.0.0",
+    "@types/papaparse": "^5.3.7",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",

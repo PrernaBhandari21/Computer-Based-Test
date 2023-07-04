@@ -1,3 +1,11 @@
 <div class="upload-ques-container mt-5">
-   <h2 class="m-5" style="text-align: center;width: 100%;">Import New Question</h2> 
+   <h2 class="m-5" style="text-align: center;">Upload</h2> 
+   <div class="input__div">
+      <label class="bold">Import Questions</label>
+      <input type="file" (change)="handleFileInput($event)">
+   </div>
+
+   <div class="submitBtn">
+      <button type="button" class="btn btn-success" (click)="submitQuestions()" value="Submit">Submit</button>
+   </div>
 </div>

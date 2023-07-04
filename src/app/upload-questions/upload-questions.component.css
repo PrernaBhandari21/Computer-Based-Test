@@ -1,8 +1,25 @@
 .upload-ques-container {
-    display: flex;
+    /* display: flex; */
     height: 500px;
     border: 1px solid black;
     background: white;
     border-radius: 10px;
     width: 100%;
+  }
+
+  .input__div{
+    font-size: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .bold{
+    font-weight: 500;
+  }
+
+  .submitBtn{
+    padding: 25px;
+    text-align: center;
+    padding-top: 50px;
   }

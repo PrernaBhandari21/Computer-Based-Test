@@ -50,6 +50,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddQuestionsComponent } from './add-questions/add-questions.component';
 import { PreviewTestComponent } from './preview-test/preview-test.component';
 import { EditTeacherProfileComponent } from './teacher/edit-teacher-profile/edit-teacher-profile.component';
+import { TestsComponent } from './student/tests/tests.component';
+import { UpcomingTestsComponent } from './student/upcoming-tests/upcoming-tests.component';
+import { PreviousTestsComponent } from './student/previous-tests/previous-tests.component';
+import { StudentDashboardComponent } from './student/student-dashboard/student-dashboard.component';
+import { EditStudentProfileComponent } from './student/edit-student-profile/edit-student-profile.component';
 
 
 @NgModule({
@@ -80,6 +85,11 @@ import { EditTeacherProfileComponent } from './teacher/edit-teacher-profile/edit
     AddQuestionsComponent,
     PreviewTestComponent,
     EditTeacherProfileComponent,
+    TestsComponent,
+    UpcomingTestsComponent,
+    PreviousTestsComponent,
+    StudentDashboardComponent,
+    EditStudentProfileComponent,
   ],
   imports: [
     BrowserModule,

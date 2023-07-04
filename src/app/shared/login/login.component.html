@@ -28,10 +28,18 @@
               <mat-label>Enter password</mat-label>
               <input matInput formControlName="password" type="password" required>
             </mat-form-field>
-          
-          
+
+            <mat-form-field>
+              <mat-label>Select Your Role</mat-label>
+              <mat-select  formControlName="role">
+                <mat-option *ngFor="let role of roles" [value]="role.value">
+                  {{role.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+                    
             <div style="display: flex; flex-direction: column; align-items: center;">
-                <button mat-raised-button color="primary" type="submit">Login</button>
+                <button class="btn btn-primary" color="primary" type="submit">Login</button>
               </div>   
           </form>
           
