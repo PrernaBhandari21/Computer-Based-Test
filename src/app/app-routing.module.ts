@@ -52,11 +52,7 @@ const routes: Routes = [
   component: TestScreenComponent, 
   data: { showHeaderSidemenu: false } },
 
-  {
-    path:'questions-cover-page',
-    component:QuestionsCoverPageComponent,
-    data: { showHeaderSidemenu: false }
-  },
+
   {
     path: 'create-test',
     component: TestStructureComponent,
@@ -83,7 +79,12 @@ const routes: Routes = [
   {
     path:'edit-student-profile',
     component:EditStudentProfileComponent,
-  }
+  } ,
+  {
+    path:'questions-cover-page',
+    component:QuestionsCoverPageComponent,
+    data: { showHeaderSidemenu: false }
+  },
   
 ];
 

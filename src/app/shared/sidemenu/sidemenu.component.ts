@@ -143,8 +143,8 @@ export class SidemenuComponent implements OnInit {
           },
 
           {
-            label:"Test Screen",
-            link:"/question-bank",
+            label:"Ongoing Test",
+            link:"/questions-cover-page",
             icon:"redeem"
           },
          

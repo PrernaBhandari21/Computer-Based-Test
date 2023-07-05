@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { InstructionPageComponent } from '../instruction-page/instruction-page.component';
+import { ExamCompletionScreenComponent } from '../student/exam-completion-screen/exam-completion-screen.component';
 
 @Component({
   selector: 'app-test-screen',
@@ -180,6 +181,7 @@ export class TestScreenComponent implements OnInit {
 
 
   submitTest() {
+
     const testAnswers: any = {};
     console.log("Submitted Answers:");
     for (let i = 0; i < this.totalQuestions; i++) {
@@ -189,6 +191,11 @@ export class TestScreenComponent implements OnInit {
       console.log(question, selectedOption);
     }
     console.log("Test Answers:", testAnswers);
+
+    const dialogRef = this.dialog.open(ExamCompletionScreenComponent, {
+      width: '400px' ,
+      disableClose: true // Prevent closing the popup by clicking outside
+    });
   }
   
   

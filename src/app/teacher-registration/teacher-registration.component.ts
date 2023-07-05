@@ -2,29 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { AddEditTeacherComponent } from '../add-edit-teacher/add-edit-teacher.component';
+import { HttpClient } from '@angular/common/http';
 
-export interface  Teacher {
-  TeacherName: string;
-  userId: string;
-  phoneNo:number,
-  registeredDate:string,
-  }
 
-const ELEMENT_DATA:  Teacher[] = [
-  {TeacherName: 'Riya', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-  {TeacherName: 'Jaanvi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-  {TeacherName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-  {TeacherName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-  {TeacherName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-  {TeacherName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-  {TeacherName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-  {TeacherName: 'Tushita', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-  {TeacherName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-  {TeacherName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-  {TeacherName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-  {TeacherName: 'Priyanshi', userId: 'pri@gmail.com',  phoneNo:8178298372, registeredDate:"2023-05-01"},
-
-];
 
 
 @Component({
@@ -34,13 +14,18 @@ const ELEMENT_DATA:  Teacher[] = [
 })
 export class TeacherRegistrationComponent implements OnInit {
 
-  constructor(private dialog : MatDialog) { }
+  constructor(private dialog : MatDialog,
+    private http : HttpClient) { }
 
-  ngOnInit(): void {
-  }
+    ELEMENT_DATA: any[] =[]
 
-  displayedColumns: string[] = ['sno', 'teachername', 'userid','phoneNo','registeredDate','edit'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+    async ngOnInit() {
+      this.fetchTeachers();
+     }
+
+  displayedColumns: string[] = ['sno', 'name', 'email','phoneNo','view'];
+  dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -58,6 +43,24 @@ export class TeacherRegistrationComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       // Handle any actions after the dialog is closed, if needed
     });
+  }
+
+  fetchTeachers(): void {
+    this.http.get<any[]>('http://localhost:4200/getTeachers').subscribe(
+      (data:any) => {
+        
+        // this.ELEMENT_DATA = data;
+        const studentList= data["teachers"]
+        this.ELEMENT_DATA = studentList;
+
+        console.log("this.ELEMENT_DATA",this.ELEMENT_DATA);
+        this.dataSource.data = this.ELEMENT_DATA;
+      },
+      error => {
+        // Handle error response here
+        console.error(error);
+      }
+    );
   }
 
 }

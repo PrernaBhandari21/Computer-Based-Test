@@ -42,4 +42,20 @@
         </div>
     </div>
 
+    <div class="question-details">
+        <h4 style="text-align: center;font-weight: 500;">Questions Added</h4>
+
+        <div class="allQuestions">
+            <div *ngFor="let question of questions; let i = index">
+              <p>Question {{ i + 1 }}: {{ question.question }}</p>
+              <ul>
+                <li *ngFor="let option of question.options">
+                  {{ option }}
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+    </div>
+
 </div>

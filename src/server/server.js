@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { Client } = require('pg');
+const pgp = require('pg-promise')();
+
 
 const app = express();
 
@@ -231,32 +233,35 @@ client.connect((err) => {
 
     app.post('/studentAuth/bulk', async (req, res) => {
       const students = req.body;
-      console.log("Data received for bulk creation:", students);
     
       try {
-        console.log("Inserting data into studentAuth:", students);
+        const cs = new pgp.helpers.ColumnSet([
+          'name',
+          'email',
+          'phoneNo',
+          'password',
+          'registrationNo',
+          'group',
+          'subGroup',
+          'role'
+        ], { table: 'studentAuth' });
     
-        // Prepare the query and values for bulk insertion
-        const insertQuery = 'INSERT INTO "studentAuth" (name, email, "phoneNo", password, "registrationNo", "group", "subGroup", role) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)';
-        const insertValues = students.map(student => {
-          const values = [
-            student.name,
-            student.email,
-            student.phoneNo,
-            student.password,
-            student.registrationNo,
-            student.group,
-            student.subGroup,
-            student.role
-          ];         
-          return values;
-        });
+        const insertValues = students.map(student => ({
+          name: student.name,
+          email: student.email,
+          phoneNo: student.phoneNo,
+          password: student.password,
+          registrationNo: student.registrationNo,
+          group: student.group,
+          subGroup: student.subGroup,
+          role: student.role
+        }));
     
-        // Execute the bulk insert operation using the values array
-        const result = await client.query(insertQuery, insertValues);
+        const insertQuery = pgp.helpers.insert(insertValues, cs);
+    
+        await client.query(insertQuery);
     
         console.log("Data saved to the database:", students);
-        console.log("Result =>", result);
     
         // Send back a success response
         res.json({ message: 'Students created successfully!', data: students });
@@ -265,6 +270,7 @@ client.connect((err) => {
         res.status(500).json({ message: 'Error in creating students. Please try again.', error: err });
       }
     });
+    
 
     //logging in for role student 
     app.get('/studentLogin', async (req, res) => {
@@ -317,12 +323,9 @@ app.put('/studentAuth', async (req, res) => {
     console.error("Error updating data in the database:", err);
     res.status(500).json({ message: 'Error updating data in the database', data: data, error: err });
   }
-});
-    
-    
-    
+});    
   
-  const PORT = process.env.PORT || 400;
+  const PORT = process.env.PORT || 4200;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

@@ -25,6 +25,17 @@
 }
 
 .test__details{
-    border-bottom: 1 px solid gray;
-    padding-bottom: 5px;
+    padding: 10px;
+    border-bottom: 1px solid;
+}
+
+
+.question-details{
+    height: 63%;
+    padding: 10px;
+}
+
+.allQuestions{
+    height: 89%;
+    overflow: auto;
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { ExamCompletionScreenComponent } from '../student/exam-completion-screen/exam-completion-screen.component';
 
 @Component({
   selector: 'app-questions-cover-page',
@@ -9,8 +11,10 @@ import { Router } from '@angular/router';
 export class QuestionsCoverPageComponent implements OnInit {
 
   constructor(
-    private route : Router
+    private route : Router,
   ) { }
+
+
 
   ngOnInit(): void {
   }
@@ -19,4 +23,6 @@ export class QuestionsCoverPageComponent implements OnInit {
   startTest(){
     this.route.navigate(['test-screen'])
   }
+
+
 }

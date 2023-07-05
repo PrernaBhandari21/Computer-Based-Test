@@ -55,6 +55,7 @@ import { UpcomingTestsComponent } from './student/upcoming-tests/upcoming-tests.
 import { PreviousTestsComponent } from './student/previous-tests/previous-tests.component';
 import { StudentDashboardComponent } from './student/student-dashboard/student-dashboard.component';
 import { EditStudentProfileComponent } from './student/edit-student-profile/edit-student-profile.component';
+import { ExamCompletionScreenComponent } from './student/exam-completion-screen/exam-completion-screen.component';
 
 
 @NgModule({
@@ -90,6 +91,7 @@ import { EditStudentProfileComponent } from './student/edit-student-profile/edit
     PreviousTestsComponent,
     StudentDashboardComponent,
     EditStudentProfileComponent,
+    ExamCompletionScreenComponent,
   ],
   imports: [
     BrowserModule,

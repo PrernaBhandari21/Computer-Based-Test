@@ -21,13 +21,22 @@ export class AddEditTeacherComponent implements OnInit {
 
     
     this.editForm = this.formBuilder.group({
-      name: [this.data?.name || '', Validators.required],
+      name: [{value :this.data?.name || '',disabled: true}, Validators.required],
       email: [{ value: this.data?.email || '', disabled: true }, Validators.required],
       phoneNo: [{ value: this.data?.phoneNo || '', disabled: true }, Validators.required],
       password: [{ value: this.data?.password || '', disabled: true }, Validators.required],
       role: ["teacher"],
 
     });
+
+      // Check if name has a value and enable/disable the control accordingly
+      if (this.editForm.get('name')?.value) {
+        console.log("yes");
+        this.editForm.get('name')?.disable();
+      } else {
+        console.log("no");
+        this.editForm.get('name')?.enable();
+      }
 
     // Check if phoneNo has a value and enable/disable the control accordingly
     if (this.editForm.get('phoneNo')?.value) {

@@ -75,12 +75,13 @@
 
   <div class="form-row">
     <label class="bold">Import Students</label>
-
     <input id="studentDetailsFile" type="file" class="btn btn-primary" accept=".csv" (change)="importStudents()">
   </div>
+  <div class="info">Please Make Sure every email used in file for adding new student must be unique!</div>
     
   <div class="button-container">
     <button class="btn btn-success me-3" type="submit" [disabled]="!editForm.valid">Save</button>
     <button class="btn btn-light" type="button" (click)="cancel()">Cancel</button>
   </div>
 </form>
+

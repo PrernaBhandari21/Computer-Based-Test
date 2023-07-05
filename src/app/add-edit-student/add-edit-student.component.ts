@@ -160,6 +160,12 @@ if (this.data?.subGroup) {
       if (this.studentDetails && this.studentDetails.length > 0) {
         for (const student of this.studentDetails) {
           student.role = "student";
+
+          if (student.password) {
+            const password = student.password;
+            const hashedPassword = SHA512(password).toString();
+            student.password = hashedPassword;
+          }
         }
         console.log("NOW FINAL this.studentDetails", this.studentDetails);
     
